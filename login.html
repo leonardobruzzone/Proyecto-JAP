@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>eMercado - Todo lo que busques está aquí</title>
+    <link href="https://fonts.googleapis.com/css?family=Raleway:300,300i,400,400i,700,700i,900,900i" rel="stylesheet">
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/styles.css" rel="stylesheet">
+    <style>
+      body {
+        background-color: rgb(248, 249, 250);
+      }
+    </style>
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark p-1">
+      <div class="container">
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav w-100 justify-content-between">
+            <li class="nav-item">
+              <a class="nav-link active" href="index.html">Inicio</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="categories.html">Categorías</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="sell.html">Vender</a>
+            </li>
+            <li class="nav-item">
+              <div class="dropdown">
+                <button class="btn btn-secondary dropdown-toggle" id="inicio" type="button" data-bs-toggle="dropdown" aria-expanded="false" style="background-color: black"> Iniciar sesión </button>
+                <ul class="dropdown-menu">
+                  
+                  <li>
+                    <a class="dropdown-item" href="cart.html">Mi carrito</a>
+                  </li>
+                  <li>
+                    <a class="dropdown-item" href="my-profile.html">Mi perfil</a>
+                  </li>
+                  <li>
+                    <a class="dropdown-item" href="login.html" onclick="logout()">Cerrar sesión</a>
+                  </li>
+                </ul>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <main class="form-singin">
+      <div class="container">
+        <div class="text-center">
+          <img src="login.png" alt="" width="40%">
+          <h1 class="h3 mb-5 fw-normal">Inicio de sesión</h1>
+          <div class="form-floating">
+            <input type="email" class="form-control" id="email">
+            <label for="email" class="form-label">Email</label>
+          </div>
+          <div class="form-floating">
+            <input type="password" class="form-control" id="password">
+            <label for="password" class="form-label1">Contraseña</label>
+          </div>
+          <button class="w-50 btn btn-lg btn-primary" type="submit" id="acceso" onclick='controlError()'>Ingresar</button>
+          </form>
+        </div>
+      </div>
+    </main>
+    <footer class="text-muted">
+      <div class="container">
+        <p class="float-end">
+          <a href="#">Volver arriba</a>
+        </p>
+        <p>Este sitio forma parte de <a href="https://jovenesaprogramar.edu.uy/" target="_blank">Jovenes a Programar</a> - 2022 </p>
+        <p>Clickea <a target="_blank" href="Letra.pdf">aquí</a> para descargar la letra del obligatorio. </p>
+      </div>
+    </footer>
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/login.js"></script>
+    <script src="js/index.js"></script>
+  </body>
+</html>

@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title>eMercado - Todo lo que busques está aquí</title>
+  <link href="https://fonts.googleapis.com/css?family=Raleway:300,300i,400,400i,700,700i,900,900i" rel="stylesheet">
+  <link href="css/font-awesome.min.css" rel="stylesheet">
+  <link href="css/bootstrap.min.css" rel="stylesheet">
+  <link href="css/styles.css" rel="stylesheet">
+</head>
+
+<body>
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark p-1">
+    <div class="container">
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav w-100 justify-content-between">
+          <li class="nav-item">
+            <a class="nav-link" href="index.html">Inicio</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="categories.html">Categorías</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="sell.html">Vender</a>
+          </li>
+          <li class="nav-item">
+            <div class="dropdown">
+              <button class="btn btn-secondary dropdown-toggle" id="inicio" type="button" data-bs-toggle="dropdown"
+                aria-expanded="false" style="background-color: black"> Iniciar sesión </button>
+              <ul class="dropdown-menu">
+                <li>
+                  <a class="dropdown-item" href="login.html">Ingresar</a>
+                </li>
+                <li>
+                  <a class="dropdown-item" href="cart.html">Mi carrito</a>
+                </li>
+                <li>
+                  <a class="dropdown-item" href="my-profile.html">Mi perfil</a>
+                </li>
+                <li>
+                  <a class="dropdown-item" href="login.html" onclick="logout()">Cerrar sesión</a>
+                </li>
+              </ul>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <main>
+    <div class="container">
+      <div class="d-flex flex-row mb-3 m-4">
+        <div>
+          <h3 id="productName"></h3>
+        </div>
+      </div>
+      <hr><br>
+      <div>
+        <h5><strong>Precio</strong></h5>
+      </div>
+      <div>
+        <h7 id="productCurrency"></h7>
+        <h7 id="productCost"></h7>
+      </div>
+      <br>
+      <div>
+        <h5>
+          <strong>Descripcion</strong>
+        </h5>
+      </div>
+      <div>
+        <h7 id="productDescription"></h7>
+      </div>
+      <br>
+      <div>
+        <h5>
+          <strong>Categoria</strong>
+        </h5>
+            </div>
+      <div>
+        <h7 id="productcate"></h7>
+      </div>
+      <br>
+      <div>
+        <h5>
+          <strong>Cantidad de Vendidos</strong>
+        </h5>
+        
+      </div>
+      <div>
+        <h7 id="productCount"></h7>
+      </div>
+      <br>
+      <img src="" alt="">
+      <div>
+        <h5><strong>Imagenes ilustrativas</strong></h5> <br>
+        <div id="productGallery" class="row"></div>
+        <br>
+      </div>
+      <hr style="height: 2px; ">
+      <div>
+        <h4><strong>Comentarios</strong></h4>
+        <div id="productComments"></div>
+      </div>
+      <div> <br>
+        <h5>Tu opinion</h5>
+
+        <div class="form-floating">
+          <textarea class="form-control" placeholder="Leave a comment here" id="floatingTextarea2"
+            style="height: 100px ; width:50%;"></textarea>
+          <label for="floatingTextarea2">Comentario</label>
+        </div> <br>
+        <h5>Tu puntuacion</h5>
+        <select class="form-select" aria-label="Default select example" style="height: 8% ; width:8%;">
+          <option value="1">1</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+          <option value="5">5</option>
+
+        </select><br>
+        <button class="btn btn-primary" type="submit">Enviar</button>
+      </div>
+      <hr>
+      <div>
+        <h4>
+          <center><strong>Productos relacionados</strong></center>
+        </h4>
+        <br>
+        <div id="relatedProducts"></div>
+      </div>
+    </div>
+
+
+
+
+
+
+
+
+  </main>
+  <footer class="text-muted">
+    <div class="container">
+      <p class="float-end">
+        <a href="#">Volver arriba</a>
+      </p>
+      <p>Este sitio forma parte de <a href="https://jovenesaprogramar.edu.uy/" target="_blank">Jovenes a Programar</a> -
+        2022 </p>
+      <p>Clickea <a target="_blank" href="Letra.pdf">aquí</a> para descargar la letra del obligatorio. </p>
+    </div>
+  </footer>
+  <div id="spinner-wrapper">
+    <div class="lds-ring">
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
+  </div>
+  <script src="js/bootstrap.bundle.min.js"></script>
+  <script src="js/init.js"></script>
+  <script src="js/product-info.js"></script>
+</body>
+
+</html>
