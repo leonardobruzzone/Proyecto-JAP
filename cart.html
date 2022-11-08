@@ -47,13 +47,14 @@
         </div>
       </div>
     </nav>
-    <main>
-      <div class="container">
-        
-        <h1 style="margin: 10px; text-align: center" >Carrito de compras</h1>
+    
+  <main>
+          
+    <div class="container">  
+      <form method="get" class="row mt-4 needs-validation" id="buyForm" novalidate>  <!--Comienza el formulario-->
 
-        <h3>Artículos a comprar</h3>
-        <br>        
+        <h1 style="margin: 10px; text-align: center" >Carrito de compras</h1>
+        <h3>Artículos a comprar</h3> <br>        
         <div class="container">
           <table class="table">
             <thead>
@@ -73,60 +74,62 @@
               <th scope="col"><input type="number" value="0" min="1" id="cantprod" onchange="totalfinal()" style="width:50%"></th>
               <th scope="col"><div id="subtotal"></div></th>
             </tr>
-          </tbody>
+            </tbody>
           </thead>
-
-           
         </table>
-      </div>
+        </div>
+        <hr>
       
-        <hr style="background-color: black;">
+        <div class="container">
+          <form method="get" class="row mt-4 needs-validation" id="buyForm" novalidate>  <!--Comienza el formulario-->
 
-        <div>
           <h3>Tipo de envío</h3>
           <div class="form-check">
-            <input class="form-check-input" type="radio" name="flexRadioDefault" id="premiumShipping">
-            <label class="form-check-label" for="flexRadioDefault1">
+            <input class="form-check-input" type="radio" name="flexRadioDefault" id="premiumShipping" required>
+            <label class="form-check-label" for="premiumShipping">
               Premiun 2 a 5 días (15%)
             </label>
           </div>
           <div class="form-check">
-            <input class="form-check-input" type="radio" name="flexRadioDefault" id="expressShipping">
-            <label class="form-check-label" for="flexRadioDefault2">
+            <input class="form-check-input" type="radio" name="flexRadioDefault" id="expressShipping" required>
+            <label class="form-check-label" for="expressShipping">
               Express 5 a 8 días (7%)
             </label>
           </div>
           <div class="form-check">
-            <input class="form-check-input" type="radio" name="flexRadioDefault" id="standarShipping">
-            <label class="form-check-label" for="flexRadioDefault3">
+            <input class="form-check-input" type="radio" name="flexRadioDefault" id="standarShipping" required>
+            <label class="form-check-label" for="standarShipping">
               Standar 12 a 15 días (5%)
             </label>
           </div>
         </div>
 
-        <br>
-
-        <div>
-          <h3>Dirección de envío</h3>
+              
+        <div class="container"> <br>
+          <h3>Dirección de envío</h3> 
        <div class="row">
         <div class="mb-3; col-6">
-          <label for="exampleFormControlInput1" class="form-label" validation>Dirección</label>
-          <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="18 de julio">
+          <label for="Direccion" class="form-label">Dirección</label>
+          <input type="text" class="form-control" id="Direccion" placeholder="18 de julio" required>
+          
         </div>
+       
         <div class="mb-3; col-6">
-          <label for="exampleFormControlInput1" class="form-label">Número</label>
-          <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="1234">
+          <label for="Numero" class="form-label">Número</label>
+          <input type="number" class="form-control" id="Numero" placeholder="1234" maxlength="4" pattern="[0-9]+" min="0" required>
+        
         </div>
        </div>
-<br>
+        
+       <br>
         <div class="mb-3; col-6">
-          <label for="exampleFormControlInput1" class="form-label">Esquina</label>
-          <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="Gaboto">
-        </div>
-        </div>
-        <hr>
-
-        <h4 class="mb-3">Costos</h4>
+          <label for="Esquina" class="form-label">Esquina</label>
+          <input type="text" class="form-control" id="Esquina" placeholder="Gaboto" required>
+        </div> <br>  <hr>
+        </div> 
+       
+       
+        <br><h4 class="mb-3">Costos</h4>
         <ul class="list-group mb-3">
           <li class="list-group-item d-flex justify-content-between lh-condensed">
             <div>
@@ -149,24 +152,91 @@
         </ul>
     
         <hr>
+        <div class="col">
+           <h4 class="mb-3">Método de pago</h4>
+           <div>
+            <span class="label" id="paymentType">No ha seleccionado</span>
+            <button type="button" class="btn btn-link" data-bs-toggle="modal" data-bs-target="#contidionsModal">Seleccionar</button>
+           </div>
+           <div class="invalid-feedback" id="paymentTypeFeedback">
+            Debe seleccionar método de pago           
+           </div>
+           </div>
 
-        <h4 class="mb-3">Raiane vc e linda demais</h4>
-        <div class="row">
-        <h6>No ha seleccionado</h6>
-        <button type="button" class="m-1 btn btn-link" data-bs-toggle="modal" data-bs-target="#contidionsModal">Seleccionar</button>
-        </div>
-         
-        <hr>
-
-<br>
-
-        <div class="d-grid gap-2">
-          <button class="btn btn-primary" type="submit">Finalizar compra</button>
+          <div class="row">
+          <button class="btn btn-primary btn-lg my-5" type="submit">Finalizar compra</button>
         </div>
           
         </div>
+        
        </div>
       </div>
+
+      <div class="modal fade" tabindex="-1" role="dialog" id="contidionsModal"> <!--MODAL DE PAGOS-->
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title">Metodo de pago</h5>
+            </div>
+            
+            <div class="modal-body">
+              <div class="container">  <!--TARJETA DE CREDITO-->
+               <div class="row">
+                 <div class="custom-control custom-radio"> 
+                  <input class="form-check-input" type="radio" name="flexRadioDefault" id="TARJETA">
+                  <label class="form-check-label" for="flexRadioDefault1"> Tarjeta de credito </label>
+                 </div>
+                </div>       <hr>
+                
+                <div class="row">
+                  <div class="col-md-6 mb-3">
+                    <label for="">Numero de tarjeta</label>
+                    <input type="text" class="form-control" placeholder="xxxx-xxxx-xxxx-xxxx" id="cardNumber" required>
+                   </div>
+                 
+                  <div class="col-md-4 mb-3">
+                    <label for="">Codigo de seg.</label>
+                    <input type="text" class="form-control" placeholder="123" id="segurityCode" required>
+                   </div>
+                </div> 
+                
+                <div class="row">
+                  <div class="col-md-6 mb-6">
+                    <label for="due-date">Vencimiento (MM/AA)</label>
+                    <input type="text" class="form-control" placeholder="01/23" id="dateExp" required>          
+                  </div>
+                </div>
+
+                <hr>
+                                        <!--CUENTA BANCARIA-->
+                <div class="row">
+                  <div class="custom-control custom-radio"> 
+                    <input class="form-check-input" type="radio" name="flexRadioDefault" id="Banco">
+                    <label class="form-check-label" for="flexRadioDefault1">Transferencia bancaria</label>
+                   </div>
+                   <hr>
+                  <div class="row">
+                    <div class="col-md-12 mb-3">
+                      <label for="">Numero de cuenta</label>
+                      <input type="text" class="form-control" placeholder="" id="numberAccount">
+                      <div class="invalid-feedback">
+                        Debe ingresar cuenta bancaria
+                      </div>
+                    </div>
+                   </div>
+                </div> 
+
+              </div>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Cerrar</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </form>
+
+      
     </main>
     
     
@@ -179,78 +249,7 @@
         <p>Clickea <a target="_blank" href="Letra.pdf">aquí</a> para descargar la letra del obligatorio. </p>
       </div>
     </footer>
-    <div class="alert alert-primary-dismissible fade" id="alertResult" role="alert">
-      <span id="resultSpan"></span>
-    </div>
-    <div class="modal fade" tabindex="-1" role="dialog" id="contidionsModal">
-      <div class="modal-dialog" role="document">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title">Forma de pago</h5>
-          </div>
-          <div class="modal-body">
-            <div class="container">
-              <div class="row">
-               <div class="custom-control custom-radio"> <!--REVISAR AQUI-->
-                <input class="form-check-input" type="radio" name="flexRadioDefault" id="TARJETA">
-                <label class="form-check-label" for="flexRadioDefault1"> Tarjeta de credito </label>
-               </div>
-              </div>
-              
-              <hr>
-              
-              <div class="row">
-                <div class="col-md-6 mb-3">
-                  <label for="">Numero de tarjeta</label>
-                  <input type="text" class="form-control" placeholder="xxxx-xxxx-xxxx-xxxx" id="cardNumber">
-                  <div class="invalid-feedback">
-                    Ingrese numero de tarjeta
-                  </div>
-                </div>
-               
-              <div class="col-md-4 mb-3">
-                  <label for="">Codigo de seg.</label>
-                  <input type="text" class="form-control" placeholder="123" id="segurityCode">
-                  <div class="invalid-feedback">
-                    Ingrese el codigo de seguridad
-                  </div>
-                </div>
-              </div>
-
-              <div class="row">
-                <div class="col-md-6 mb-6">
-                  <label for="due-date">Vencimiento (MM/AA)</label>
-                  <input type="text" class="form-control" placeholder="01/23" id="dateExp">
-                  <div class="invalid-feedback">
-                    Ingrese fecha de vencimiento
-                  </div>
-                </div>
-              </div>
-
-              <hr>
-
-              <div class="row">
-              <div class="custom-control custom-radio"> <!--REVISAR AQUI-->
-                <input class="form-check-input" type="radio" name="flexRadioDefault" id="Banco">
-                <label class="form-check-label" for="flexRadioDefault1"> Cuenta bancaria </label>
-               </div>
-               <hr>
-              <div class="row">
-                <div class="col-md-12 mb-3">
-                  <label for="">Numero de cuenta</label>
-                  <input type="text" class="form-control" placeholder="" id="numberAccount">
-                  <div class="invalid-feedback">
-                    Debe ingresar cuenta bancaria
-                  </div>
-            </div>
-            </div>
-          </div>
-          <div class="modal-footer">
-            <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Cerrar</button>
-          </div>
-        </div>
-      </div>
-    </div>
+   
     <div id="spinner-wrapper">
       <div class="lds-ring">
         <div></div>
@@ -261,6 +260,7 @@
     </div>
     <script src="js/bootstrap.bundle.min.js"></script>
     <script src="js/init.js"></script>
-    <script src="js/cart.js"></script>
+    <script src="js/cart.js"></script> 
+    
     <script src="js/login.js"></script>
   </body>
